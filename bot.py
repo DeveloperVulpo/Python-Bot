@@ -32,7 +32,7 @@ async def ping(ctx):
 async def say(ctx, *, msg):
     await ctx.send(f"{msg}")
 
-# Say Command
+# Punch Command
 # >punch <user>
 
 @client.command()
@@ -48,7 +48,7 @@ async def punch(ctx):
         punchEmbed.set_footer(text="I stole your toes")
         await ctx.send(embed=punchEmbed)
 
-# Say Command
+# Kiss Command
 # >kiss <user>
 
 @client.command()
@@ -160,11 +160,16 @@ async def cuddle(ctx, member:discord.Member):
     await ctx.send(f"OWO {ctx.author.mention} cuddled with {member.mention} cuuuute")
 
 @client.command()
-async def coinflip(ctx):
-    choices = ["heads", "tails"]
-    await ctx.send(f"According to the coin I choose {random.choice(choices)}")
-
-
+async def coinflip(ctx, *, side):
+    if(side == "heads" or "tails"):
+        choices = ["heads", "tails"]
+        await ctx.send(f"According to the coin I choose {random.choice(choices)}")
+        if(side != choices ):
+            await ctx.send(f" **Son, Ya lost the bet**\nAccording to the coin I choose {random.choice(choices)} \n Your Choice: {side}")
+        else:
+            await ctx.send(f" **Ya won the bet**\nAccording to the coin I choose {random.choice(choices)}\n Your Choice: {side}")
+    else:
+        await ctx.send(f"According to the coin I choose {random.choice(choices)}")
 # Boa I swear to god 👁️👄👁️
 # hehe 👁️👄👁️
 # Shut yo stoopid Mouth yall I stg
