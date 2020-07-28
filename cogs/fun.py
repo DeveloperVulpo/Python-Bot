@@ -10,17 +10,14 @@ class Fun(commands.Cog):
     # Punch Command
     # >punch <user>
     @commands.command()
-    async def punch(self, ctx):
-        if(ctx.message.mentions and ctx.message.mentions[0].id != ctx.author.id):
-            punchEmbed = discord.Embed(title="Punch a User", description = f"User {ctx.author.mention} punched {ctx.message.mentions[0].mention}")
-            punchEmbed.set_image(url="https://media1.tenor.com/images/31686440e805309d34e94219e4bedac1/tenor.gif?itemid=4790446")
-            punchEmbed.set_footer(text="I stole your toes")
-            await ctx.send(embed=punchEmbed)
+    async def punch(self, ctx, user: discord.Member):
+        if user == ctx.author:
+            punchEmbed = discord.Embed(title = "Punch a User", description = f"User {ctx.author.mention} punched themselves... just fucking... WHY!?")
         else:
-            punchEmbed = discord.Embed(title="Punch a User", description = f"User {ctx.author.mention} punched themselves... just fucking... WHY!?")
-            punchEmbed.set_image(url="https://media1.tenor.com/images/31686440e805309d34e94219e4bedac1/tenor.gif?itemid=4790446")
-            punchEmbed.set_footer(text="I stole your toes")
-            await ctx.send(embed=punchEmbed)
+            punchEmbed = discord.Embed(title="Punch a User", description = f"User {ctx.author.mention} punched {user.mention}")
+        punchEmbed.set_image(url="https://media1.tenor.com/images/31686440e805309d34e94219e4bedac1/tenor.gif?itemid=4790446")
+        punchEmbed.set_footer(text="I stole your toes")
+        await ctx.send(embed=punchEmbed)
 
     # Choose Command
     # >choose <args1> <args2> [...]
