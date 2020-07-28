@@ -4,8 +4,8 @@ import time
 from discord.ext import commands
 
 class Fun(commands.Cog):
-    def __init__ (self, client):
-        self.client = client
+    def __init__ (self, bot):
+        self.bot = bot
     
     # Punch Command
     # >punch <user>
@@ -112,5 +112,5 @@ class Fun(commands.Cog):
 
 
 
-def setup(client):
-        client.add_cog(Fun(client))
+def setup(bot):
+        bot.add_cog(Fun(bot))
