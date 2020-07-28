@@ -47,7 +47,7 @@ async def reload(ctx, extention):
 # >say <message>
 
 @client.command()
-async def say(ctx, *, msg):
+async def say(ctx, *, msg: commands.clean_content):
     await ctx.send(f"{msg}")
 
 # Boa, Fiire I swear to god 👁️👄👁️
