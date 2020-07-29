@@ -4,8 +4,7 @@ import time
 from discord.ext import commands
 
 class Fun(commands.Cog):
-    def __init__ (self, bot):
-        self.bot = bot
+    def __init__ (self, bot): self.bot = bot
     
     # Punch Command
     # >punch <user>
@@ -22,13 +21,13 @@ class Fun(commands.Cog):
     # Choose Command
     # >choose <args1> <args2> [...]
     @commands.command()
-    async def choose(self, ctx, *choices : str):
+    async def choose(self, ctx, *choices: str):
         await ctx.send(random.choice(choices))
 
     # Rock, Paper, and Scissor command
     # >rps <rock|paper|scissors>
     @commands.command()
-    async def rps(self, ctx, l):
+    async def rps(self, ctx, l: str):
         choices = ["rock", "paper", "scissors"]
         chosen = random.choice(choices)
         if(l == "rock" and chosen == "paper"):
@@ -67,28 +66,28 @@ class Fun(commands.Cog):
     # Love Command
     # >love <word>
     @commands.command()
-    async def love(self, ctx, word):
+    async def love(self, ctx, word: str):
         choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
         chosen = random.choice(choices)
         if chosen == "0":
             hearts = ":broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: "
-        elif chosen =="1":
+        elif chosen == "1":
             hearts = ":heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: "
-        elif chosen =="2":
+        elif chosen == "2":
             hearts = ":heart: :heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart::broken_heart: :broken_heart: :broken_heart: :broken_heart:"
-        elif chosen =="3":
+        elif chosen == "3":
             hearts = ":heart: :heart: :heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart:"
-        elif chosen =="4":
+        elif chosen == "4":
             hearts = ":heart: :heart: :heart: :heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart:"
-        elif chosen =="5":
+        elif chosen == "5":
             hearts = ":heart: :heart: :heart: :heart: :heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart:"
-        elif chosen =="6":
+        elif chosen == "6":
             hearts = ":heart: :heart: :heart: :heart: :heart: :heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart:"
         elif chosen =="7":
             hearts = ":heart: :heart: :heart: :heart: :heart: :heart: :heart: :broken_heart: :broken_heart: :broken_heart:"
-        elif chosen =="8":
+        elif chosen == "8":
             hearts = ":heart: :heart: :heart: :heart: :heart: :heart: :heart: :heart: :broken_heart: :broken_heart:"
-        elif chosen =="9":
+        elif chosen == "9":
             hearts = ":heart: :heart: :heart: :heart: :heart: :heart: :heart: :heart: :heart: :broken_heart:"
         else:
             hearts = ":heart: :heart: :heart: :heart: :heart: :heart: :heart: :heart: :heart: :heart:"
@@ -104,17 +103,16 @@ class Fun(commands.Cog):
     # Cuddle Command
     # >cuddle <member>
     @commands.command()
-    async def cuddle(self, ctx, member:discord.Member):
+    async def cuddle(self, ctx, member: discord.Member):
         await ctx.send(f"OWO {ctx.author.mention} cuddled with {member.mention} cuuuute")
 
     @commands.command()
     async def furry(self, ctx, user: discord.Member = None):
         chosen = random.randint(0, 10)
-        if user == ctx.author or user is None:
+        if user == ctx.author or user == None:
             ctx.send(f"You are {chosen}/10 Furry!")
         else:
             await ctx.send(f"{user.mention} is {chosen}/10 Furry")
 
 
-def setup(bot):
-       bot.add_cog(Fun(bot))
+def setup(bot): bot.add_cog(Fun(bot))
