@@ -107,7 +107,24 @@ class Fun(commands.Cog):
     async def cuddle(self, ctx, member:discord.Member):
         await ctx.send(f"OWO {ctx.author.mention} cuddled with {member.mention} cuuuute")
 
+    @commands.command()
+    async def furry(self, ctx, user):
+        if user == ctx.author:
+
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+            chosen = random.choice(choices)
+            ctx.send(f"You are {chosen}/10 Furry!")
+        elif user == discord.User:
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+            chosen = random.choice(choices)
+            await ctx.send(f"{user.mention} is {chosen}/10 Furry")
+        else:
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+            chosen = random.choice(choices)
+            await ctx.send(f"{user} is {chosen}/10 Furry")
+
+
 
 
 def setup(bot):
-        bot.add_cog(Fun(bot))
+       bot.add_cog(Fun(bot))
