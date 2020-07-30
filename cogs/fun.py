@@ -9,8 +9,8 @@ class Fun(commands.Cog):
     # Punch Command
     # >punch <user>
     @commands.command()
-    async def punch(self, ctx, user: discord.Member):
-        if user == ctx.author:
+    async def punch(self, ctx, user: discord.Member = None):
+        if user == ctx.author or user == None:
             punchEmbed = discord.Embed(title = "Punch a User", description = f"User {ctx.author.mention} punched themselves... just fucking... WHY!?")
         else:
             punchEmbed = discord.Embed(title="Punch a User", description = f"User {ctx.author.mention} punched {user.mention}")
@@ -55,6 +55,14 @@ class Fun(commands.Cog):
         time.sleep(.10)
         await message.edit(content="(╯°□°)╯      ┻━┻")
 
+    @commands.command()
+    async def tableflop(self, ctx):
+        message = await ctx.send("(\\\\°□°)\\\\  ┬─┬')")
+        time.sleep(.10)
+        await message.edit(content="(-°□°)-  ┬─┬")
+        time.sleep(.20)
+        await message.edit(content="┬─┬ ノ( ゜-゜ノ)")
+
     # Dice Command
     # >dice
     @commands.command()
@@ -67,8 +75,7 @@ class Fun(commands.Cog):
     # >love <word>
     @commands.command()
     async def love(self, ctx, word: str):
-        choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
-        chosen = random.choice(choices)
+        chosen = random.randint(0, 10)
         if chosen == "0":
             hearts = ":broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: "
         elif chosen == "1":
@@ -103,14 +110,18 @@ class Fun(commands.Cog):
     # Cuddle Command
     # >cuddle <member>
     @commands.command()
-    async def cuddle(self, ctx, member: discord.Member):
-        await ctx.send(f"OWO {ctx.author.mention} cuddled with {member.mention} cuuuute")
-
+    async def cuddle(self, ctx, member: discord.Member = None):
+        if member == ctx.author or member == None:
+            await ctx.send(f"APPARENTLY {ctx.author.mention} Some how cuddle with themselves ...weird")
+        else:
+            await ctx.send(f"{ctx.author.mention} Cuddled with {member.mention}. Very Cute UwU")
+    
+    
     @commands.command()
     async def furry(self, ctx, user: discord.Member = None):
         chosen = random.randint(0, 10)
         if user == ctx.author or user == None:
-            ctx.send(f"You are {chosen}/10 Furry!")
+            await ctx.send(f"You are {chosen}/10 Furry!")
         else:
             await ctx.send(f"{user.mention} is {chosen}/10 Furry")
 
