@@ -35,7 +35,7 @@ class Fun(commands.Cog):
             await ctx.send(f"I win, I chose {chosen}")
         elif l == "paper" and chosen == "scissors":
             await ctx.send(f"I win, I chose {chosen}")
-        elif l == "scissors" and chosen == "rock:
+        elif l == "scissors" and chosen == "rock":
             await ctx.send(f"I win, I chose {chosen}")
         elif l == chosen:
             await ctx.send(f"We Tied, I chose {chosen}")
