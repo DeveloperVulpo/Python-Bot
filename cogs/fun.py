@@ -30,16 +30,17 @@ class Fun(commands.Cog):
     async def rps(self, ctx, l: str):
         choices = ["rock", "paper", "scissors"]
         chosen = random.choice(choices)
+
         if l == "rock" and chosen == "paper":
-            await ctx.send(f"I win, I choosen {chosen}")
+            await ctx.send(f"I win, I chose {chosen}")
         elif l == "paper" and chosen == "scissors":
-            await ctx.send(f"I win, I choosen {chosen}")
-        elif l == "scissors" and chosen == "rock":
-            await ctx.send(f"I win, I choosen {chosen}")
+            await ctx.send(f"I win, I chose {chosen}")
+        elif l == "scissors" and chosen == "rock:
+            await ctx.send(f"I win, I chose {chosen}")
         elif l == chosen:
-            await ctx.send(f"We Tied, I choosen {chosen}")
+            await ctx.send(f"We Tied, I chose {chosen}")
         else:
-            await ctx.send(f"I have lost, I choosen {chosen}")
+            await ctx.send(f"I have lost, I chose {chosen}")
     
     # Tableflip animation Command
     # >tableflip
