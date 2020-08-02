@@ -39,9 +39,9 @@ async def unload(ctx, extention):
 
 @client.command()
 async def reload(ctx, extention):
-    client.load_extension(f"cogs.{extention}")
     client.unload_extension(f"cogs.{extention}")
-    await ctx.send(f"Unloaded {extention}")
+    client.load_extension(f"cogs.{extention}")
+    await ctx.send(f"Reloaded {extention}")
 
 # Say Command
 # >say <message>
