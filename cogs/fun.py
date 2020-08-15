@@ -59,9 +59,9 @@ class Fun(commands.Cog):
     @commands.command()
     async def tableflop(self, ctx):
         message = await ctx.send("(\\\\°□°)\\\\  ┬─┬')")
-        time.sleep(.10)
+        await asyncio.sleep(.10)
         await message.edit(content="(-°□°)-  ┬─┬")
-        time.sleep(.20)
+        await asyncio.sleep(.20)
         await message.edit(content="┬─┬ ノ( ゜-゜ノ)")
 
     # Dice Command
