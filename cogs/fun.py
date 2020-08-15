@@ -1,6 +1,6 @@
 import discord
 import random
-import time
+import asyncio
 from discord.ext import commands
 
 class Fun(commands.Cog):
@@ -47,21 +47,21 @@ class Fun(commands.Cog):
     @commands.command()
     async def tableflip(self, ctx):
         message = await ctx.send("(\\\\°□°)\\\\  ┬─┬')")
-        time.sleep(.10)
+        await asyncio.sleep(.10)
         await message.edit(content="(-°□°)-  ┬─┬")
-        time.sleep(.10)
+        await asyncio.sleep(.10)
         await message.edit(content="(╯°□°)╯    ]")
-        time.sleep(.10)
+        await asyncio.sleep(.10)
         await message.edit(content="(╯°□°)╯  ︵  ┻━┻")
-        time.sleep(.10)
+        await asyncio.sleep(.10)
         await message.edit(content="(╯°□°)╯      ┻━┻")
 
     @commands.command()
     async def tableflop(self, ctx):
         message = await ctx.send("(\\\\°□°)\\\\  ┬─┬')")
-        time.sleep(.10)
+        await asyncio.sleep(.10)
         await message.edit(content="(-°□°)-  ┬─┬")
-        time.sleep(.20)
+        await asyncio.sleep(.20)
         await message.edit(content="┬─┬ ノ( ゜-゜ノ)")
 
     # Dice Command
