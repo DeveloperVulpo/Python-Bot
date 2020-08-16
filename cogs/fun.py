@@ -1,5 +1,6 @@
 import discord
 import random
+import requests
 import asyncio
 from discord.ext import commands
 
@@ -125,6 +126,53 @@ class Fun(commands.Cog):
             await ctx.send(f"You are {chosen}/10 Furry!")
         else:
             await ctx.send(f"{user.mention} is {chosen}/10 Furry")
+
+    @commands.command()
+    async def cry(self, ctx):
+        await ctx.send(f"{ctx.author.mention} Cried. ;-;")
+
+    @commands.command()
+    async def lick(self, ctx, user: discord.Member = None):
+        if user == ctx.author or user == None:
+            lickEmbed = discord.Embed(title = "Licked a User", description = f"{ctx.author.mention} licked themselves that is some fucked up wizard shit mannnn")
+        else:
+            lickEmbed = discord.Embed(title="Licked a User", description = f"{ctx.author.mention} licked {user.mention} 👅")
+        lickEmbed.set_image(url="https://media.discordapp.net/attachments/714681336652103750/744380390151815279/oyn30Ku1Nf0.gif")
+        lickEmbed.set_footer(text="I stole your toes")
+        await ctx.send(embed=lickEmbed)
+
+    @commands.command()
+    async def lick(self, ctx, user: discord.Member = None):
+        if user == ctx.author or user == None:
+            lickEmbed = discord.Embed(title = "Licked a User", description = f"{ctx.author.mention} licked themselves that is some fucked up wizard shit mannnn")
+        else:
+            lickEmbed = discord.Embed(title="Licked a User", description = f"{ctx.author.mention} licked {user.mention} 👅")
+        lickEmbed.set_image(url="https://media.discordapp.net/attachments/714681336652103750/744380390151815279/oyn30Ku1Nf0.gif")
+        lickEmbed.set_footer(text="I stole your toes")
+        await ctx.send(embed=lickEmbed) 
+
+        """TODO: FIX"""
+
+    """ @commands.command()
+    async def owo(self, ctx):
+        response = requests.get('https://rra.ram.moe/i/r?type=owo')
+        jsonRes = response.json
+        if response:
+            owoEmbed = discord.Embed(title="OWO WHAT'S THIS")
+            owoEmbed.set_image(url=f"https://rra.ram.moe{jsonRes.path}")
+            await ctx.send(embed=owoEmbed)
+        else:
+            await ctx.send("An Error has Occured, contact the bot devs") """
+
+    @commands.command()
+    async def stare(self, ctx, user: discord.Member = None):
+        if user == ctx.author or user == None:
+            stareEmbed = discord.Embed(title = "Stare at a User", description = f"{ctx.author.mention} stares at themselves in the mirror")
+        else:
+            stareEmbed = discord.Embed(title="Stare at a User", description = f"{ctx.author.mention} stares at {user.mention} 👀 that really creepy and fucked up")
+        stareEmbed.set_image(url="https://media.discordapp.net/attachments/731523556801773769/744695058120441866/tenor.gif?width=302&height=401")
+        stareEmbed.set_footer(text="I stole your toes")
+        await ctx.send(embed=stareEmbed)
 
 
 def setup(bot): bot.add_cog(Fun(bot))
