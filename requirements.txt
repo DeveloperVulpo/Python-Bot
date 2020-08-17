@@ -17,7 +17,6 @@ lxml==4.2.4
 multidict==4.7.6
 numpy==1.16.6
 packaging==19.2
-Pillow==6.2.2
 pwquality==1.4.2
 pyasn1==0.4.7
 pycairo==1.18.2
