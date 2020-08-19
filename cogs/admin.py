@@ -2,6 +2,8 @@ import ast
 import discord
 from discord.ext import commands
 
+# Eval Command Credits: https://gist.github.com/nitros12/2c3c265813121492655bc95aa54da6b9
+
 
 class Admin(commands.Cog):
     def __init__ (self, client):
