@@ -79,27 +79,27 @@ class Fun(commands.Cog):
     async def love(self, ctx, word: str):
         chosen = random.randint(0, 10)
         if chosen == "0":
-            hearts = ":broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: "
+            hearts = ":broken_heart:" * 10
         elif chosen == "1":
-            hearts = ":heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: "
+            hearts = ":heart:" + ":broken_heart:" * 9
         elif chosen == "2":
-            hearts = ":heart: :heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart::broken_heart: :broken_heart: :broken_heart: :broken_heart:"
+            hearts = ":heart:" * 2 + ":broken_heart:" * 8
         elif chosen == "3":
-            hearts = ":heart: :heart: :heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart:"
+            hearts = ":heart:" * 3 + ":broken_heart:" * 7
         elif chosen == "4":
-            hearts = ":heart: :heart: :heart: :heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart:"
+            hearts = ":heart:" * 4 + ":broken_heart:" * 6
         elif chosen == "5":
-            hearts = ":heart: :heart: :heart: :heart: :heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart:"
+            hearts = ":heart:" * 5 + ":broken_heart:" * 5
         elif chosen == "6":
-            hearts = ":heart: :heart: :heart: :heart: :heart: :heart: :broken_heart: :broken_heart: :broken_heart: :broken_heart:"
+            hearts = ":heart:" * 6 + ":broken_heart:" * 4
         elif chosen =="7":
-            hearts = ":heart: :heart: :heart: :heart: :heart: :heart: :heart: :broken_heart: :broken_heart: :broken_heart:"
+            hearts = ":heart:" * 7 + ":broken_heart:" * 3
         elif chosen == "8":
-            hearts = ":heart: :heart: :heart: :heart: :heart: :heart: :heart: :heart: :broken_heart: :broken_heart:"
+            hearts = ":heart:" * 8 + ":broken_heart:" * 2
         elif chosen == "9":
-            hearts = ":heart: :heart: :heart: :heart: :heart: :heart: :heart: :heart: :heart: :broken_heart:"
+            hearts = ":heart:" * 9 + ":broken_heart:"
         else:
-            hearts = ":heart: :heart: :heart: :heart: :heart: :heart: :heart: :heart: :heart: :heart:"
+            hearts = ":heart:" * 10
         await ctx.send(f"You love {word} {chosen}/10\n{hearts}")
 
     # Dad Joke Command
