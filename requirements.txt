@@ -13,7 +13,7 @@ discord.py==1.2.5
 evdev==1.1.2
 idna==2.8
 LibAppArmor==2.13.4
-lxml==4.2.4
+lxml==4.6.2
 multidict==4.7.6
 numpy==1.16.6
 packaging==19.2
